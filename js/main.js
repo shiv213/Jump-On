@@ -18,6 +18,8 @@ var imageload = new Image();
 imageload.src = "imgs/sprites.png";
 
 //Variables for game
+var click = false;
+var touching = [0, 0, 0, 0];
 var platforms = [],
     // image = document.getElementById("sprite"),
     image = imageload,
@@ -270,6 +272,49 @@ function init() {
             }
         };
 
+        // Touch Controls
+        var leftBox = document.getElementById('leftGlasspane');
+        var rightBox = document.getElementById('rightGlasspane');
+        // var leftBox = document.getElementsByClassName('container');
+        // var statusdiv = document.getElementById('statusdiv');
+        // var statusdivR = document.getElementById('statusdivR');
+        var startx = 0;
+        var dist = 0;
+
+        leftBox.addEventListener('touchstart', function (e) {
+            var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
+            startx = parseInt(touchobj.clientX); // get x position of touch point relative to left edge of browser
+            // statusdiv.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px';
+            e.preventDefault();
+            dir = "left";
+            player.isMovingLeft = true;
+        }, false);
+
+        leftBox.addEventListener('touchend', function (e) {
+            var touchobj = e.changedTouches[0]; // reference first touch point for this event
+            // statusdiv.innerHTML = 'Status: touchend<br> Resting x coordinate: ' + touchobj.clientX + 'px';
+            // e.preventDefault()
+            dir = "left";
+            player.isMovingLeft = false;
+        }, false);
+
+        rightBox.addEventListener('touchstart', function (e) {
+            var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
+            startx = parseInt(touchobj.clientX); // get x position of touch point relative to left edge of browser
+            // statusdivR.innerHTML = 'Status: touchstart<br> ClientX: ' + startx + 'px';
+            e.preventDefault();
+            dir = "right";
+            player.isMovingRight = true;
+        }, false);
+
+        rightBox.addEventListener('touchend', function (e) {
+            var touchobj = e.changedTouches[0]; // reference first touch point for this event
+            // statusdivR.innerHTML = 'Status: touchend<br> Resting x coordinate: ' + touchobj.clientX + 'px';
+            // e.preventDefault()
+            dir = "right";
+            player.isMovingRight = false;
+        }, false);
+
         document.onkeyup = function (e) {
             var key = e.keyCode;
 
@@ -355,7 +400,7 @@ function init() {
         if (player.isDead === true) gameOver();
     }
 
-    //Spring algorithms
+//Spring algorithms
 
     function springCalc() {
         var s = Spring;
@@ -374,7 +419,7 @@ function init() {
         }
     }
 
-    //Platform's horizontal movement (and falling) algo
+//Platform's horizontal movement (and falling) algo
 
     function platformCalc() {
         var subs = platform_broken_substitute;
@@ -462,7 +507,7 @@ function init() {
         }
     }
 
-    //Function to update everything
+//Function to update everything
 
     function update() {
         paintCanvas();
