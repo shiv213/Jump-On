@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>Jump On</title>
     <link rel="stylesheet" href="style.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="js/prefixfree.min.js"></script>
     <style>
         .glasspane {
@@ -59,6 +59,37 @@
             font-size: 12pt;
             font-family: Palatino, Arial, Helvetica, sans-serif;
         }
+
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 75px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 50%;
+        }
+
+        .fa:hover {
+            opacity: 0.7;
+        }
+
+        .fa-snapchat-ghost {
+            background: #fffc00;
+            color: white;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        }
+
+        .fa-instagram {
+            background: #125688;
+            color: white;
+        }
+
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+
+
     </style>
 </head>
 <body>
@@ -76,16 +107,20 @@
     </canvas>
 
     <div id="mainMenu">
-        <h1>doodle jump</h1>
-        <h3>using HTML5,</h3>
-        <h3>...by <a href="http://twitter.com/solitarydesigns/" target="_blank">Kushagra Agarwal</a></h3>
-        <h3>and <a href="http://twitter.com/_rishabhp" target="_blank">Rishabh</a></h3>
-
-        <p class="info">
-            use
-            <span class="key left">←</span>
-            <span class="key right">→</span>
-            to move and space to (re) start...
+        <!--<h1>Jump On...</h1>-->
+        <!--<h3>with</h3>-->
+        <!--<h3><a href="https://www.instagram.com/keertisoundappan/" target="_blank">Soundappan</a></h3>-->
+        <!--<h4>Vote Keerti Soundappan for 2018-2019 FBLA Secretary!</h4>-->
+        <!--<a href="https://www.instagram.com/keertisoundappan/" target="_blank"><img style="margin-top: -135px; margin-left: -35px; margin-right: auto; width: 370px; height: 370px;" src="imgs/NLC%20logo.png"/></a>-->
+        <a href="https://www.instagram.com/keertisoundappan/" target="_blank"><img
+                style="margin-top: -100px; margin-left: -35px; margin-right: auto; width: 430px; height: 430px;"
+                src="imgs/NLC%20logo.png"/></a>
+        <p style="text-align:center" class="info">
+            Click on the sides of the screen to move
+            <!--use-->
+            <!--<span class="key left">←</span>-->
+            <!--<span class="key right">→</span>-->
+            <!--to move and space to (re) start...-->
         </p>
         <a class="button" href="javascript:init()">Play</a>
     </div>
@@ -93,7 +128,11 @@
     <div id="gameOverMenu">
         <h1>game over!</h1>
         <h3 id="go_score">you scored 0 points</h3>
-
+        <h4>Check out Keerti on:</h4>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/keertisoundappan/" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-snapchat-ghost"></a>
+        <img style="right: 0px; left: 0px; top: 0px; width: 430px; height: 430px;" src="imgs/NLC%20logo.png"/>
         <a class="button" href="javascript:reset()">Restart</a>
         <a id="tweetBtn" target="_blank" class="button tweet" href="#">Tweet score</a>
 
