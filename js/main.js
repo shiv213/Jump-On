@@ -18,8 +18,10 @@ var imageload = new Image();
 imageload.src = "imgs/sprites.png";
 
 //Variables for game
-var click = false;
-var touching = [0, 0, 0, 0];
+var highScore = localStorage.getItem('highScore') || 0;
+document.getElementById("highScore").innerHTML = localStorage.getItem('highScore') || 0;
+document.getElementById("highScore2").innerHTML = localStorage.getItem('highScore');
+
 var platforms = [],
     // image = document.getElementById("sprite"),
     image = imageload,
@@ -229,6 +231,7 @@ var spring = function () {
 var Spring = new spring();
 
 function init() {
+    document.getElementById("highScore").innerHTML = localStorage.getItem('highScore') || 0;
     //Variables for the game
     var dir = "left",
         jumpCount = 0;
@@ -280,7 +283,7 @@ function init() {
         // var statusdivR = document.getElementById('statusdivR');
         var startx = 0;
         var dist = 0;
-
+        document.getElementById("highScore").innerHTML = localStorage.getItem('highScore') || 0;
         leftBox.addEventListener('touchstart', function (e) {
             var touchobj = e.changedTouches[0]; // reference first touch point (ie: first finger)
             startx = parseInt(touchobj.clientX); // get x position of touch point relative to left edge of browser
@@ -392,6 +395,11 @@ function init() {
             }
 
             score++;
+            if (highScore < score) {
+                highScore = score;
+                localStorage.setItem('highScore', highScore);
+                document.getElementById("highScore").innerHTML = localStorage.getItem('highScore') || 0;
+            }
         }
 
         //Make the player jump when it collides with platforms
