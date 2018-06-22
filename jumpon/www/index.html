@@ -1,53 +1,74 @@
 <!doctype html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8">
-    <title>HTML5 Doodle Jump</title>
+    <title>Jump On</title>
+    <meta name="viewport" content="width=422 user-scalable=no">
     <link rel="stylesheet" href="style.css">
-
-    <script src="/assets/js/prefixfree.min.js"></script>
-  </head>
-  <body>
-    <div class="container">
-
-      <canvas id="canvas">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="js/prefixfree.min.js"></script>
+</head>
+<body>
+<div class="container" id="cont">
+    <div class="glasspane" id='leftGlasspane'>
+        <!--<p>LEFT BOX</p>-->
+        <!--<h3 id="statusdiv">Status</h3>-->
+    </div>
+    <div class="glasspane2" id='rightGlasspane'>
+        <!--<p>RIGHT BOX</p>-->
+        <!--<h3 id="statusdivR">Status</h3>-->
+    </div>
+    <canvas id="canvas">
         Aww, your browser doesn't support HTML5!
-      </canvas>
+    </canvas>
 
-      <div id="mainMenu">
-        <h1>doodle jump</h1>
-        <h3>using HTML5,</h3>
-        <h3>...by <a href="http://twitter.com/solitarydesigns/" target="_blank">Kushagra Agarwal</a></h3>
-  			<h3>and <a href="http://twitter.com/_rishabhp" target="_blank">Rishabh</a></h3>
+    <div id="mainMenu">
+        <!--<h1>Jump On...</h1>-->
+        <!--<h3>with</h3>-->
+        <!--<h3><a href="https://www.instagram.com/keertisoundappan/" target="_blank">Soundappan</a></h3>-->
+        <!--<h4>Vote Keerti Soundappan for 2018-2019 FBLA Secretary!</h4>-->
+        <!--<a href="https://www.instagram.com/keertisoundappan/" target="_blank"><img style="margin-top: -135px; margin-left: -35px; margin-right: auto; width: 370px; height: 370px;" src="imgs/NLC%20logo.png"/></a>-->
+        <a href="https://www.instagram.com/keertisoundappan/" target="_blank"><img
+                style="margin-top: -100px; margin-left: -25px; margin-right: auto; width: 400px; height: 400px;"
+                src="imgs/Campaign%20Logo%20NLC%20(1).svg"/></a>
+        <h3 style="position: absolute; top: 170px; right: 110px">Highscore:</h3>
+        <h4 style="position: absolute; top: 140px; right: 60px" id="highScore"></h4>
 
-        <p class="info">
-          use
-          <span class="key left">←</span>
-          <span class="key right">→</span>
-          to move and space to (re) start...
+        <p style="text-align:center" class="info">
+            Click on the sides of the screen to move
+            <!--use-->
+            <!--<span class="key left">←</span>-->
+            <!--<span class="key right">→</span>-->
+            <!--to move and space to (re) start...-->
         </p>
         <a class="button" href="javascript:init()">Play</a>
-      </div>
-
-      <div id="gameOverMenu">
-        <h1>game over!</h1>
-        <h3 id="go_score">you scored 0 points</h3>
-
-        <a class="button" href="javascript:reset()">Restart</a>
-        <a id="tweetBtn" target="_blank" class="button tweet" href="#">Tweet score</a>
-
-        <a id="fbBtn" target="_blank" class="button fb" href="#">Post on FB</a>
-      </div>
-
-      <!-- Preloading image ;) -->
-      <!--<img id="sprite" src="imgs/sprites.png"/>-->
-
-      <div id="scoreBoard">
-        <p id="score">0</p>
-      </div>
-
     </div>
 
-    <script src="main.js"></script>
-  </body>
+    <div id="gameOverMenu">
+        <h1>game over!</h1>
+        <h3 id="go_score">you scored 0 points</h3>
+        <h4 style="margin-top: 10px;margin-bottom: 8px">Check out Keerti on:</h4>
+        <a href="#" class="fa fa-twitter"></a>
+        <a href="https://www.instagram.com/keertisoundappan/" class="fa fa-instagram"></a>
+        <a href="#" class="fa fa-snapchat-ghost"></a>
+        <img style="position: relative; padding-bottom: 200px; margin-left: -25px; margin-right: auto; width: 400px; height: 400px;"
+             src="imgs/Campaign%20Logo%20NLC%20(1).svg"/>
+        <a class="button" href="javascript:reset()">Restart</a>
+        <a style="margin-bottom: 0px" id="tweetBtn" target="_blank" class="button tweet" href="#">Tweet score</a>
+        <a id="fbBtn" target="_blank" class="button fb" href="#">Post on FB</a>
+        <h3 style="position: absolute; bottom: 100px; right: 30px">Highscore:</h3>
+        <h4 style="position: absolute; bottom: 40px; right: 80px" id="highScore2"></h4>
+    </div>
+
+    <!-- Pre-loading image ;) -->
+    <!--<img id="sprite" src="imgs/sprites.png"/>-->
+
+    <div id="scoreBoard">
+        <p id="score">0</p>
+    </div>
+
+</div>
+
+<script src="js/main.js"></script>
+</body>
 </html>

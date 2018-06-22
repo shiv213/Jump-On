@@ -8,7 +8,7 @@
   },
   "installed_plugins": {
     "cordova-plugin-whitelist": {
-      "PACKAGE_NAME": "com.fbla.jumpon"
+      "PACKAGE_NAME": "fbla.keertisoundappan.jumpon"
     }
   },
   "dependent_plugins": {}
